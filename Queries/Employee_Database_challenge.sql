@@ -12,14 +12,16 @@ on (e.emp_no = t.emp_no)
 where (e.birth_date between '1952-01-01' and '1955-12-31')
 order by e.emp_no;
 
-
-
+--retrieve unique employee record with latest title 
 -- Use Dictinct with Orderby to remove duplicate rows
-SELECT DISTINCT ON (______) _____,
-______,
-______,
-______
+select distinct on (emp_no) emp_no, 
+	first_name,
+	last_name,
+	title
+into unique_titles
+from retirement_titles 
+order by emp_no, to_date desc; 
 
-INTO nameyourtable
-FROM _______
-ORDER BY _____, _____ DESC;
+--count # of unique job titles from unique title table
+select count (distinct title) from unique_titles;
+
