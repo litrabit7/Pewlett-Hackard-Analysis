@@ -15,7 +15,7 @@ CREATE TABLE employees (
 	 hire_date DATE NOT NULL,
      PRIMARY KEY (emp_no)
     );
-CREATE TABLE manager (
+CREATE TABLE dept_manager (
 	dept_no VARCHAR(4) NOT NULL,
     emp_no INT NOT NULL,
     from_date DATE NOT NULL,
@@ -55,7 +55,7 @@ drop table titles cascade;
 
 SELECT * FROM departments;
 SELECT * FROM employees;
-select * from manager;
+select * from dept_manager;
 select * from salaries;
 select * from dept_emp;
 select * from titles;
