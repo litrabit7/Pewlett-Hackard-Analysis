@@ -25,3 +25,10 @@ order by emp_no, to_date desc;
 --count # of unique job titles from unique title table
 select count (distinct title) from unique_titles;
 
+--retrieve # of employee retireing from each title 
+-- in decending order by total
+select count (emp_no), title
+into retiring_titles
+from unique_titles
+group by title
+order by count (emp_no) desc;
